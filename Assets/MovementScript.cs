@@ -8,7 +8,7 @@ using UnityEngine;
 public class MovementScript : MonoBehaviour
 {
     public float speed = 3.0f;
-    public float rotateSpeed = 2.0f;
+    public float rotateSpeed = 3.0f;
 
     // Update is called once per frame
     void Update()
