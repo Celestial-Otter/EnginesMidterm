@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Runtime.InteropServices;
+using UnityEngine.SceneManagement;
 
 public class DLLManager : MonoBehaviour
 {
@@ -81,8 +82,18 @@ public class DLLManager : MonoBehaviour
 
             SaveCheckTime(checkpointTime);
             currentCheck = CheckpointBehaviour.checkPoints;
-        }
 
+            Text Checkp = GameObject.Find("Canvas/Checkpoint" + currentCheck).GetComponent<Text>();
+            Checkp.text = "Checkpoint " + CheckpointBehaviour.checkPoints.ToString() + ": " + LoadTotalTime().ToString();
+
+            StatsSaverScript.checkPointTimes[currentCheck] = checkpointTime;
+            if (currentCheck == 6)
+            {
+                StatsSaverScript.totalRunTime = LoadTotalTime();
+                SceneManager.LoadScene("StatsScene");
+            }
+        }
+/*
         for (int i = 0; i < 6; i++)
         {
             if (Input.GetKeyDown(KeyCode.Alpha0+i))
@@ -94,10 +105,11 @@ public class DLLManager : MonoBehaviour
         {
             Debug.Log(LoadTotalTime());
         }
+*/
         
         //Timer UI object
         Text Timer = GameObject.Find("Canvas/CheckPointCounter").GetComponent<Text>();
-        Timer.text = "Checkpoints: " + CheckpointBehaviour.checkPoints.ToString() + "/6"; 
+        Timer.text = "Checkpoints: " + CheckpointBehaviour.checkPoints.ToString() + "/6";
     }
     public void OnDestroy()
     {

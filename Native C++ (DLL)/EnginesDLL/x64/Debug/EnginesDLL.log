@@ -1,4 +1,1 @@
-﻿  Wrapper.cpp
-d:\Desktop\EnginesDLL\CheckpointTimeLogger.h(18,27): warning C4251: 'CheckpointTimeLogger::m_RTBC': class 'std::vector<float,std::allocator<float>>' needs to have dll-interface to be used by clients of class 'CheckpointTimeLogger'
-d:\Desktop\EnginesDLL\CheckpointTimeLogger.h(18): message : see declaration of 'std::vector<float,std::allocator<float>>'
-  EnginesDLL.vcxproj -> d:\Desktop\EnginesDLL\x64\Debug\EnginesDLL.dll
+﻿
