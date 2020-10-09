@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class DeathPlaneScript : MonoBehaviour
 {
-    public GameObject Player;
     void OnTriggerEnter(Collider other)
     {
-    GameObject CurCheckpoint = GameObject.Find("Checkpoint " + CheckpointBehaviour.checkPoints);
-        Player.transform.position = CurCheckpoint.transform.position;
-        Debug.Log(transform.position);
-        Debug.Log(CurCheckpoint.transform.position);
+        GameObject CurCheckpoint = GameObject.Find("Checkpoint " + CheckpointBehaviour.checkPoints);
+        other.GetComponent<CharacterController>().enabled = false;
+        other.transform.position = CurCheckpoint.transform.position + new Vector3(0, 5, 0);
+        other.GetComponent<CharacterController>().enabled = true;
     }
 }
