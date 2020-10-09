@@ -1390,7 +1390,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52123139}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1458,7 +1458,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b918a77ce7036846ad2bf717c85d6b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 543167623}
 --- !u!43 &80487104
 Mesh:
   m_ObjectHideFlags: 0
@@ -10647,7 +10646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82724c77b34f9340b5e7033f358d371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 5
   rotateSpeed: 0.5
 --- !u!143 &543167629
 CharacterController:
@@ -19342,7 +19341,7 @@ GameObject:
   - component: {fileID: 1131801614}
   - component: {fileID: 1131801613}
   m_Layer: 5
-  m_Name: Text
+  m_Name: CheckPointCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
