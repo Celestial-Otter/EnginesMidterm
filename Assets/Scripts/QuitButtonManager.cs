@@ -6,6 +6,7 @@ public class QuitButtonManager : MonoBehaviour
 {
     public void OnButtonPress()
     {
+        //closes the application
         Application.Quit();
     }
 }

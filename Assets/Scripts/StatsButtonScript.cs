@@ -7,6 +7,7 @@ public class StatsButtonScript : MonoBehaviour
 {
     public void OnButtonPress()
     {
+        //loads the stats screen
         SceneManager.LoadScene("StatsScene");
     }
 }

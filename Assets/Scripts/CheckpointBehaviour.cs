@@ -13,10 +13,14 @@ public class CheckpointBehaviour : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
+        //Checks to see if checkpoint has been triggered already
         if (isTriggered == false)
         {
+            //increment checkPoints variable for the deathplane
             checkPoints++;
+            //Change triggered value to true
             isTriggered = true;
+            //change colour of checkpoint
             gameObject.GetComponent<Renderer>().material.color = Color.green;
             Debug.Log(checkPoints);
         }

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BlockMoveScriptX : MonoBehaviour
 {
+    //Variables
     private bool forward = true;
     public float speed = 2.0f;
     public float startX = 0.0f;
@@ -12,11 +13,13 @@ public class BlockMoveScriptX : MonoBehaviour
 
     void Update()
     {
+        //checking to see what direction the block should be moving
         if (forward == true)
             transform.Translate(Vector3.right * speed * Time.deltaTime);
         else
             transform.Translate(-Vector3.right * speed * Time.deltaTime);
 
+        //switching direction of block
         if (transform.position.x >= endX)
         {
             forward = false;

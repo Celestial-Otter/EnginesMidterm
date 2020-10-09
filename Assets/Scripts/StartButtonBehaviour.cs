@@ -7,6 +7,7 @@ public class StartButtonBehaviour : MonoBehaviour
 {
     public void OnButtonPress()
     {
+        //loads the play scene
         SceneManager.LoadScene("PlayScene");
     }
 }

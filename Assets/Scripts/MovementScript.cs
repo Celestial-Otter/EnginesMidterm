@@ -9,7 +9,7 @@ using UnityEngine.UIElements;
 public class MovementScript : MonoBehaviour
 {
     public float speed = 5.0f;
-    public float rotateSpeed = 0.5f;
+    public float rotateSpeed = 1f;
 
     // Update is called once per frame
     void Update()

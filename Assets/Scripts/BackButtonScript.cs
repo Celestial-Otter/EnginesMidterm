@@ -7,6 +7,7 @@ public class BackButtonScript : MonoBehaviour
 {
 public void OnButtonPress()
     {
+        //This loads the start scene
         SceneManager.LoadScene("StartScene");
     }
 }

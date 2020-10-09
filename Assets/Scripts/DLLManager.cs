@@ -74,8 +74,10 @@ public class DLLManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Check to see if player has tripped a new checkpoint
         if (currentCheck != CheckpointBehaviour.checkPoints)
         {
+            //record checkpoint time
             float currentTime = Time.time;
             float checkpointTime = currentTime - lastTime;
             lastTime = currentTime;
@@ -83,10 +85,13 @@ public class DLLManager : MonoBehaviour
             SaveCheckTime(checkpointTime);
             currentCheck = CheckpointBehaviour.checkPoints;
 
+            //write checkpoint time to stats screen
             Text Checkp = GameObject.Find("Canvas/Checkpoint" + currentCheck).GetComponent<Text>();
             Checkp.text = "Checkpoint " + CheckpointBehaviour.checkPoints.ToString() + ": " + LoadTotalTime().ToString();
 
             StatsSaverScript.checkPointTimes[currentCheck] = checkpointTime;
+
+            //check if maze is completed
             if (currentCheck == 6)
             {
                 StatsSaverScript.totalRunTime = LoadTotalTime();
