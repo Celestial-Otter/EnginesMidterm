@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿//References: https://www.codegrepper.com/code-examples/csharp/unity+how+to+change+text+in+script
+//https://answers.unity.com/questions/699565/how-to-get-a-variable-value-from-another-scriptc.html
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Runtime.InteropServices;
 
 public class DLLManager : MonoBehaviour
@@ -62,6 +65,7 @@ public class DLLManager : MonoBehaviour
     void Start()
     {
         lastTime = Time.time;
+
     }
 
     // Update is called once per frame
@@ -76,7 +80,7 @@ public class DLLManager : MonoBehaviour
             SaveTimeTest(checkpointTime);
         }
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 5; i++)
         {
             if (Input.GetKeyDown(KeyCode.Alpha0+i))
             {
@@ -87,6 +91,10 @@ public class DLLManager : MonoBehaviour
         {
             Debug.Log(LoadTotalTimeTest());
         }
+        
+        //Timer UI object
+        Text Timer = GameObject.Find("Canvas/Text").GetComponent<Text>();
+        Timer.text = "Checkpoints: " + CheckpointBehaviour.checkPoints.ToString() + "/6"; 
     }
     public void OnDestroy()
     {
